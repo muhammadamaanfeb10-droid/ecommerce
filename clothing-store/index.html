@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Premium Clothing Brand</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">
+                <span class="text-primary">Style</span><span class="text-dark">Hub</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#featured">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#new-arrivals">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-outline-dark position-relative">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="badge bg-primary mb-3 px-3 py-2">New Collection 2024</span>
+                    <h1 class="display-3 fw-bold mb-4">Discover Your <span class="text-primary">Perfect Style</span></h1>
+                    <p class="lead mb-4">Explore our latest collection of premium clothing designed for the modern individual. Quality, comfort, and style in every piece.</p>
+                    <div class="d-flex gap-3">
+                        <a href="products.html" class="btn btn-primary btn-lg px-4">Shop Now</a>
+                        <a href="#featured" class="btn btn-outline-dark btn-lg px-4">View Collection</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image text-center">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600" alt="Fashion Model" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Banner -->
+    <section class="features-banner py-4 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-3 mb-md-0">
+                    <i class="bi bi-truck fs-2 text-primary"></i>
+                    <p class="mb-0 fw-medium">Free Shipping</p>
+                    <small class="text-muted">On orders over $50</small>
+                </div>
+                <div class="col-6 col-md-3 mb-3 mb-md-0">
+                    <i class="bi bi-shield-check fs-2 text-primary"></i>
+                    <p class="mb-0 fw-medium">Secure Payment</p>
+                    <small class="text-muted">100% secure checkout</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-arrow-return-left fs-2 text-primary"></i>
+                    <p class="mb-0 fw-medium">Easy Returns</p>
+                    <small class="text-muted">30-day return policy</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-headset fs-2 text-primary"></i>
+                    <p class="mb-0 fw-medium">24/7 Support</p>
+                    <small class="text-muted">Dedicated support team</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Featured Products</h2>
+                <p class="text-muted">Handpicked favorites from our collection</p>
+            </div>
+            <div class="row g-4" id="featured-products">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">New Arrivals</h2>
+                <p class="text-muted">Check out our latest additions</p>
+            </div>
+            <div class="row g-4" id="new-arrivals-products">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Shop by Category</h2>
+                <p class="text-muted">Find what you're looking for</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="category-card position-relative overflow-hidden rounded-4">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=400" alt="Men's Fashion" class="img-fluid w-100">
+                        <div class="category-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-white fw-bold">Men</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="category-card position-relative overflow-hidden rounded-4">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400" alt="Women's Fashion" class="img-fluid w-100">
+                        <div class="category-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-white fw-bold">Women</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="category-card position-relative overflow-hidden rounded-4">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=400" alt="Unisex Fashion" class="img-fluid w-100">
+                        <div class="category-overlay d-flex align-items-center justify-content-center">
+                            <h4 class="text-white fw-bold">Unisex</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Our Customers Say</h2>
+                <p class="text-muted">Real reviews from real customers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="review-card p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Customer" class="rounded-circle" width="50" height="50">
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Ahmed Khan</h6>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-0">"Amazing quality products! The t-shirts are so comfortable and the fit is perfect. Will definitely shop again!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Customer" class="rounded-circle" width="50" height="50">
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Sara Malik</h6>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-0">"Love the summer dress collection! Beautiful designs and fast delivery. Highly recommend StyleHub!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Customer" class="rounded-circle" width="50" height="50">
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Hassan Raza</h6>
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-0">"Great customer service and the jeans fit perfectly. The website is easy to use and checkout was smooth."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="fw-bold mb-2">Subscribe to Our Newsletter</h3>
+                    <p class="mb-0">Get the latest updates on new arrivals and exclusive offers!</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="d-flex gap-2" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-dark btn-lg px-4">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-3"><span class="text-primary">Style</span>Hub</h4>
+                    <p class="text-light">Your destination for premium fashion. Quality, style, and comfort in every piece.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Shop</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Men</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Women</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Unisex</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <ul class="list-unstyled text-light">
+                        <li><i class="bi bi-geo-alt me-2"></i> 123 Fashion Street, Style City</li>
+                        <li><i class="bi bi-envelope me-2"></i> support@stylehub.com</li>
+                        <li><i class="bi bi-telephone me-2"></i> +1 234 567 890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-light">
+                <p class="mb-0">&copy; 2024 StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

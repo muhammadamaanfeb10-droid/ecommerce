@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - StyleHub</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">
+                <span class="text-primary">Style</span><span class="text-dark">Hub</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#featured">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#new-arrivals">New Arrivals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#reviews">Reviews</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-outline-dark position-relative">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="fw-bold">Checkout</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
+                            <li class="breadcrumb-item active">Checkout</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Checkout Form -->
+                <div class="col-lg-8">
+                    <form id="checkout-form" onsubmit="event.preventDefault(); processCheckout();">
+                        <!-- Contact Information -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-4"><i class="bi bi-person me-2 text-primary"></i>Contact Information</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-4"><i class="bi bi-geo-alt me-2 text-primary"></i>Shipping Address</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="first-name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="last-name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Address *</label>
+                                        <input type="text" class="form-control" id="address" placeholder="Street address" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" id="address-2" placeholder="Apartment, suite, etc. (optional)">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">City *</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">State/Province *</label>
+                                        <input type="text" class="form-control" id="state" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">ZIP/Postal Code *</label>
+                                        <input type="text" class="form-control" id="zip" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Country *</label>
+                                        <select class="form-select" id="country" required>
+                                            <option value="">Select Country</option>
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="PK">Pakistan</option>
+                                            <option value="IN">India</option>
+                                            <option value="OTHER">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Method -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-4"><i class="bi bi-truck me-2 text-primary"></i>Shipping Method</h5>
+                                <div class="form-check mb-3 p-3 border rounded">
+                                    <input class="form-check-input" type="radio" name="shipping" id="shipping-standard" value="standard" checked onchange="updateShippingCost(0)">
+                                    <label class="form-check-label d-flex justify-content-between w-100" for="shipping-standard">
+                                        <div>
+                                            <span class="fw-bold">Standard Shipping</span>
+                                            <p class="mb-0 text-muted small">5-7 business days</p>
+                                        </div>
+                                        <span class="fw-bold">Free</span>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3 p-3 border rounded">
+                                    <input class="form-check-input" type="radio" name="shipping" id="shipping-express" value="express" onchange="updateShippingCost(15)">
+                                    <label class="form-check-label d-flex justify-content-between w-100" for="shipping-express">
+                                        <div>
+                                            <span class="fw-bold">Express Shipping</span>
+                                            <p class="mb-0 text-muted small">2-3 business days</p>
+                                        </div>
+                                        <span class="fw-bold">$15.00</span>
+                                    </label>
+                                </div>
+                                <div class="form-check p-3 border rounded">
+                                    <input class="form-check-input" type="radio" name="shipping" id="shipping-overnight" value="overnight" onchange="updateShippingCost(25)">
+                                    <label class="form-check-label d-flex justify-content-between w-100" for="shipping-overnight">
+                                        <div>
+                                            <span class="fw-bold">Overnight Shipping</span>
+                                            <p class="mb-0 text-muted small">Next business day</p>
+                                        </div>
+                                        <span class="fw-bold">$25.00</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Information -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold mb-4"><i class="bi bi-credit-card me-2 text-primary"></i>Payment Information</h5>
+                                
+                                <!-- Payment Methods -->
+                                <div class="mb-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="payment" id="payment-card" value="card" checked>
+                                        <label class="form-check-label" for="payment-card">
+                                            <i class="bi bi-credit-card me-1"></i>Credit Card
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="payment" id="payment-paypal" value="paypal">
+                                        <label class="form-check-label" for="payment-paypal">
+                                            <i class="bi bi-paypal me-1"></i>PayPal
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="payment" id="payment-cod" value="cod">
+                                        <label class="form-check-label" for="payment-cod">
+                                            <i class="bi bi-cash me-1"></i>Cash on Delivery
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Card Details -->
+                                <div id="card-details">
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label">Card Number *</label>
+                                            <input type="text" class="form-control" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Expiry Date *</label>
+                                            <input type="text" class="form-control" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">CVV *</label>
+                                            <input type="text" class="form-control" id="card-cvv" placeholder="123" maxlength="3">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Cardholder Name *</label>
+                                            <input type="text" class="form-control" id="card-name" placeholder="Name on card">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Save Info -->
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox" id="save-info">
+                                    <label class="form-check-label" for="save-info">
+                                        Save this information for next time
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <i class="bi bi-lock me-2"></i>Complete Order
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-4">Order Summary</h5>
+                            
+                            <!-- Order Items -->
+                            <div id="checkout-items" class="mb-4">
+                                <!-- Items will be loaded dynamically -->
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Subtotal</span>
+                                <span id="checkout-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Shipping</span>
+                                <span id="checkout-shipping">Free</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Tax (10%)</span>
+                                <span id="checkout-tax">$0.00</span>
+                            </div>
+                            
+                            <hr>
+                            <div class="d-flex justify-content-between mb-4">
+                                <span class="fw-bold">Total</span>
+                                <span class="fw-bold fs-5 text-primary" id="checkout-total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-3"><span class="text-primary">Style</span>Hub</h4>
+                    <p class="text-light">Your destination for premium fashion. Quality, style, and comfort in every piece.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Shop</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Men</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Women</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Unisex</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <ul class="list-unstyled text-light">
+                        <li><i class="bi bi-geo-alt me-2"></i> 123 Fashion Street, Style City</li>
+                        <li><i class="bi bi-envelope me-2"></i> support@stylehub.com</li>
+                        <li><i class="bi bi-telephone me-2"></i> +1 234 567 890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-light">
+                <p class="mb-0">&copy; 2024 StyleHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                    <h3 class="mt-4 fw-bold">Order Placed Successfully!</h3>
+                    <p class="text-muted">Thank you for your purchase. Your order has been confirmed.</p>
+                    <p class="fw-bold">Order #: <span id="order-number"></span></p>
+                    <a href="index.html" class="btn btn-primary btn-lg mt-3">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Load checkout summary on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCheckoutSummary();
+            loadSavedInfo();
+        });
+    </script>
+</body>
+</html>
